@@ -16,6 +16,7 @@ resource "google_container_node_pool" "gke_node_pool" {
       "https://www.googleapis.com/auth/logging.write",
       "https://www.googleapis.com/auth/monitoring",
     ]
+    preemptible = true
   }
 }
 
