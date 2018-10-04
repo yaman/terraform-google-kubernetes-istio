@@ -4,7 +4,7 @@ variable "gcp_project" {
 
 variable "gcp_region" {
   description = "The region in which all GCP resources will be launched."
-  default     = "us-east1"
+  default     = "europe-west1-b"
 }
 
 variable "cluster_name" {
@@ -24,18 +24,22 @@ variable "master_password" {
   description = "GKE cluster master password"
 }
 
+variable "credentials_file" {
+  description = "service account's credential file"
+}
+
 variable "cluster_region" {
   description = "GKE cluster region"
 }
 
 variable "helm_repository" {
   description = "Helm repository where the istio chart release is published"
-  default     = "https://richardalberto.github.io/terraform-google-kubernetes-istio"
+  default     = "https://chart-repo.storage.googleapis.com"
 }
 
 variable "istio_version" {
   description = "Istio chart version"
-  default     = "1.0.1"
+  default     = "1.1.0"
 }
 
 variable "min_node_count" {
@@ -45,5 +49,5 @@ variable "min_node_count" {
 
 variable "max_node_count" {
   description = "GKE cluster maximun node autoscaling count"
-  default     = 3
+  default     = 1
 }
